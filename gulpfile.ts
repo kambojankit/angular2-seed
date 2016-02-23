@@ -6,6 +6,7 @@ import {runSequence, task} from './tools/utils';
 gulp.task('clean', done => task('clean', 'all')(done));
 gulp.task('clean.dev', done => task('clean', 'dev')(done));
 gulp.task('clean.prod', done => task('clean', 'prod')(done));
+gulp.task('clean.prodW', done => task('clean', 'prodW')(done));
 gulp.task('check.versions', () => task('check.versions'));
 gulp.task('build.docs', () => task('build.docs'));
 gulp.task('serve.docs', () => task('serve.docs'));
@@ -105,4 +106,16 @@ gulp.task('serve.prod', done =>
 gulp.task('test', done =>
   runSequence('build.test',
               'karma.start',
+              done));
+
+// Build devW.
+gulp.task('build.prodW', done =>
+  runSequence('clean.prodW',   //Cleans the prod environment
+              'tslint',
+              'build.assets.prodW',
+              'build.html_css.prodW',
+              'build.js.prodW',
+              'build.bundlesW',
+              'build.bundles.appW',
+              'build.index.prodW',
               done));
