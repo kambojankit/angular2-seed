@@ -1,12 +1,14 @@
 import {provide, enableProdMode} from 'angular2/core';
 import {bootstrap} from 'angular2/platform/browser';
 import {ROUTER_PROVIDERS, APP_BASE_HREF} from 'angular2/router';
-import {AppComponent} from './app/components/app.component';
+import {FORM_PROVIDERS} from 'angular2/common';
+import {AppComponent} from './appN/app.component';
 
 if ('<%= ENV %>' === 'prod' || '<%= ENV %>' === 'prodW') { enableProdMode(); }
 
 bootstrap(AppComponent, [
   ROUTER_PROVIDERS,
+  FORM_PROVIDERS,
   provide(APP_BASE_HREF, { useValue: '<%= APP_BASE %>' })
 ]);
 

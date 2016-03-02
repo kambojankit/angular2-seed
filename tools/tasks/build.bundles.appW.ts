@@ -7,7 +7,6 @@ import {
   SYSTEM_BUILDER_CONFIG,
   TMP_DIR
 } from '../configW';
-import * as debug from 'gulp-debug';
 import * as util from 'gulp-util';
 import * as chalk from 'chalk';
 

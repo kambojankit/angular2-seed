@@ -26,7 +26,8 @@ export = function buildJSDev(gulp, plugins) {
     function minifyComponentCss() {
       return gulp.src([
           join(APP_SRC, '**', '*.css'),
-          '!' + join(APP_SRC, 'assets', '**', '*.css')  // This line restricts any other css place in folders under assets from being picked.
+          // This line restricts any other css place in folders under assets from being picked.
+          '!' + join(APP_SRC, 'assets', '**', '*.css')
         ])
         .pipe(debug({title:'html_css.minifyComponentCss.src'}))
         .pipe(plugins.cssnano())

@@ -16,7 +16,7 @@ gulp.task('serve.coverage', task('serve.coverage'));
 // Build dev.
 gulp.task('build.dev', done =>
   runSequence('clean.dev',
-              'tslint',
+              // 'tslint',
               'build.assets.dev',
               'build.js.dev',
               'build.index.dev',
@@ -111,7 +111,7 @@ gulp.task('test', done =>
 // Build devW.
 gulp.task('build.prodW', done =>
   runSequence('clean.prodW',   //Cleans the prod environment
-              'tslint',
+              // 'tslint',
               'build.assets.prodW',
               'build.html_css.prodW',
               'build.js.prodW',
